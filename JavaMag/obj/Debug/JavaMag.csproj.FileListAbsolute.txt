@@ -1,0 +1,16 @@
+D:\JavaMag\JavaMag\JavaMag\bin\Debug\JavaMag.exe.config
+D:\JavaMag\JavaMag\JavaMag\obj\Debug\JavaMag.csprojResolveAssemblyReference.cache
+D:\JavaMag\JavaMag\JavaMag\bin\Debug\JavaMag.exe
+D:\JavaMag\JavaMag\JavaMag\bin\Debug\JavaMag.pdb
+D:\JavaMag\JavaMag\JavaMag\bin\Debug\Antlr4.Runtime.dll
+D:\JavaMag\JavaMag\JavaMag\bin\Debug\Antlr4.Runtime.xml
+D:\JavaMag\JavaMag\JavaMag\obj\Debug\JavaMag.exe
+D:\JavaMag\JavaMag\JavaMag\obj\Debug\JavaMag.pdb
+C:\MAG\JavaMag\JavaMag\JavaMag\bin\Debug\JavaMag.exe.config
+C:\MAG\JavaMag\JavaMag\JavaMag\obj\Debug\JavaMag.exe
+C:\MAG\JavaMag\JavaMag\JavaMag\obj\Debug\JavaMag.pdb
+C:\MAG\JavaMag\JavaMag\JavaMag\bin\Debug\JavaMag.exe
+C:\MAG\JavaMag\JavaMag\JavaMag\bin\Debug\JavaMag.pdb
+C:\MAG\JavaMag\JavaMag\JavaMag\bin\Debug\Antlr4.Runtime.dll
+C:\MAG\JavaMag\JavaMag\JavaMag\bin\Debug\Antlr4.Runtime.xml
+C:\MAG\JavaMag\JavaMag\JavaMag\obj\Debug\JavaMag.csprojResolveAssemblyReference.cache
