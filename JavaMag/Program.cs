@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
+using JavaMag.cfg;
 
 namespace JavaMag
 {
@@ -13,7 +14,7 @@ namespace JavaMag
     {
         static void Main(string[] args)
         {
-            StreamReader inputStream = new StreamReader("C:\\MAG\\BeerSong.java");
+            StreamReader inputStream = new StreamReader(MainCfg.JavaFilesDir);
             AntlrInputStream input = new AntlrInputStream(inputStream.ReadToEnd());
             Java8Lexer lexer = new Java8Lexer(input);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
