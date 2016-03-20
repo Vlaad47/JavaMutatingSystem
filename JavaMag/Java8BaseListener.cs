@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:\JavaMag\JavaMag\JavaMag\Java8.g4 by ANTLR 4.5-SNAPSHOT
+// Generated from D:\JavaMag\JavaMutatingSystem\JavaMag\Java8.g4 by ANTLR 4.5-SNAPSHOT
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -2946,6 +2946,19 @@ public partial class Java8BaseListener : IJava8Listener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitRelationalExpression([NotNull] Java8Parser.RelationalExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.compareOperator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCompareOperator([NotNull] Java8Parser.CompareOperatorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.compareOperator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCompareOperator([NotNull] Java8Parser.CompareOperatorContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.shiftExpression"/>.

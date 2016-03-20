@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:\JavaMag\JavaMag\JavaMag\Java8.g4 by ANTLR 4.5-SNAPSHOT
+// Generated from D:\JavaMag\JavaMutatingSystem\JavaMag\Java8.g4 by ANTLR 4.5-SNAPSHOT
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -631,22 +631,4 @@ public partial class Java8Lexer : Lexer {
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }
-
-    internal class Character
-    {
-        public static bool isJavaIdentifierStart(object la)
-        {
-            return true;
-        }
-
-        public static int toCodePoint(char la, char c)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public static bool isJavaIdentifierPart(int la)
-        {
-            return true;
-        }
-    }
 } // namespace JavaMag

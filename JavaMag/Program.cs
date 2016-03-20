@@ -21,42 +21,42 @@ namespace JavaMag
             Java8Parser parser = new Java8Parser(tokens);
             ParserRuleContext tree = parser.compilationUnit();
             Console.WriteLine(tree.GetText());
-            Console.WriteLine(new JavaVisitor().Visit(tree));
+            new JavaVisitor().Visit(tree);
+            Console.WriteLine(tree.GetText());
             Console.Read();
         }
     }
 
     class JavaVisitor : Java8BaseVisitor<String>
+    { 
+
+        public override string VisitCompareOperator(Java8Parser.CompareOperatorContext context)
+        {
+            Console.WriteLine(context.GetChild(0).Payload.GetType());
+            CommonToken zenon = new CommonToken((CommonToken)context.GetChild(0).Payload);
+            zenon.Text = ">";
+            context.RemoveLastChild();
+            context.AddChild(zenon);
+            return base.VisitCompareOperator(context);
+        }
+    }
+
+    //TODO fix this, this class should behave like Character class in Java
+    public class Character
     {
-        public override string VisitCompilationUnit(Java8Parser.CompilationUnitContext context)
+        public static bool isJavaIdentifierStart(object la)
         {
-            return base.VisitCompilationUnit(context);
+            return true;
         }
 
-        public override string VisitTypeDeclaration(Java8Parser.TypeDeclarationContext context)
+        public static int toCodePoint(char la, char c)
         {
-            Console.WriteLine("TypeDeclaration");
-            return base.VisitTypeDeclaration(context);
+            throw new System.NotImplementedException();
         }
 
-        public override string VisitStatement(Java8Parser.StatementContext context)
+        public static bool isJavaIdentifierPart(int la)
         {
-            Console.WriteLine("Statement");
-            return base.VisitStatement(context);
-        }
-
-        public override string VisitIfThenStatement(Java8Parser.IfThenStatementContext context)
-        {
-            Console.WriteLine("IF");
-            Java8Parser.ExpressionContext zenon = context.expression();
-            //zenon.GetTokens();
-            return base.VisitIfThenStatement(context);
-        }
-
-        public override string VisitRelationalExpression(Java8Parser.RelationalExpressionContext context)
-        {
-            Console.WriteLine(3);
-            return base.VisitRelationalExpression(context);
+            return true;
         }
     }
 }

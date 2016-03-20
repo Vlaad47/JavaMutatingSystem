@@ -9,7 +9,7 @@ namespace JavaMag.cfg
 {
     public static class MainCfg
     {
-        public static string JavaFilesDir = "G:\\javaFiles\\j01.java";
+        public static string JavaFilesDir = "D:\\JavaMag\\j01.java";
 
     }
 }
