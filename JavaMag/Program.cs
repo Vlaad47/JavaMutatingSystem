@@ -33,7 +33,7 @@ namespace JavaMag
     class MutatorOperator
     {
         public string TooMuttate;// co chce mutowac np: <,>,!=,.....
-        public string Mutators; // <,>
+        public string Mutators; // <,> *
     }
 
     class JavaVisitor : Java8BaseVisitor<String>
@@ -62,7 +62,7 @@ namespace JavaMag
         {
             Console.WriteLine(context.GetChild(0).Payload.GetType());
             CommonToken zenon = new CommonToken((CommonToken)context.GetChild(0).Payload);
-            zenon.Text = ">";
+            zenon.Text = ">"; //random z *
             context.RemoveLastChild();
             context.AddChild(zenon);
             return base.VisitCompareOperator(context);
