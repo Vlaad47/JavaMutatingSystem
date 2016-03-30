@@ -25,6 +25,20 @@ namespace JavaMag
             Console.WriteLine(tree.GetText());
             Console.Read();
         }
+
+
+
+
+
+
+    }
+
+
+
+    class MutatorOperator
+    {
+        public string TooMuttate;// co chce mutowac np: <,>,!=,.....
+        public string Mutators; // <,>
     }
 
     class JavaVisitor : Java8BaseVisitor<String>
