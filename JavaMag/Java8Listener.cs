@@ -2496,6 +2496,28 @@ public interface IJava8Listener : IParseTreeListener {
 	void ExitRelationalExpression([NotNull] Java8Parser.RelationalExpressionContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.lesserThanOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLesserThanOperator([NotNull] Java8Parser.LesserThanOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.lesserThanOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLesserThanOperator([NotNull] Java8Parser.LesserThanOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.greaterThanOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterGreaterThanOperator([NotNull] Java8Parser.GreaterThanOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.greaterThanOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitGreaterThanOperator([NotNull] Java8Parser.GreaterThanOperatorContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.compareOperator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

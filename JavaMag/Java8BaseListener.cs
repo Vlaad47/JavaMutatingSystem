@@ -2948,6 +2948,32 @@ public partial class Java8BaseListener : IJava8Listener {
 	public virtual void ExitRelationalExpression([NotNull] Java8Parser.RelationalExpressionContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.lesserThanOperator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLesserThanOperator([NotNull] Java8Parser.LesserThanOperatorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.lesserThanOperator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLesserThanOperator([NotNull] Java8Parser.LesserThanOperatorContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.greaterThanOperator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterGreaterThanOperator([NotNull] Java8Parser.GreaterThanOperatorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.greaterThanOperator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitGreaterThanOperator([NotNull] Java8Parser.GreaterThanOperatorContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.compareOperator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>

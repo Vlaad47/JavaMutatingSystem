@@ -1601,6 +1601,20 @@ public interface IJava8Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitRelationalExpression([NotNull] Java8Parser.RelationalExpressionContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.lesserThanOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLesserThanOperator([NotNull] Java8Parser.LesserThanOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.greaterThanOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitGreaterThanOperator([NotNull] Java8Parser.GreaterThanOperatorContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.compareOperator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

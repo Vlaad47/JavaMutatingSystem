@@ -1264,9 +1264,13 @@ relationalExpression
 	|	relationalExpression 'instanceof' referenceType
 	;
 
+lesserThanOperator : '<';
+
+greaterThanOperator : '>';
+
 compareOperator
-	:   '<'
-	|	'>'
+	:   lesserThanOperator
+	|	greaterThanOperator
 	|	'<='
 	|	'>='
 	;
