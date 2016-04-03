@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cfg\mainCfg.cs" />
+    <Compile Include="Character.cs" />
     <Compile Include="Java8BaseListener.cs" />
     <Compile Include="Java8BaseVisitor.cs" />
     <Compile Include="Java8Lexer.cs" />
@@ -67,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="JavaSource\j01.java" />
+    <Content Include="JavaSource\Test.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="generated\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

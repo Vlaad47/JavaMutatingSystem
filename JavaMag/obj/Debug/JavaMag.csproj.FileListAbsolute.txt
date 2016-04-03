@@ -5,3 +5,4 @@ D:\JavaMag\JavaMutatingSystem\JavaMag\bin\Debug\Antlr4.Runtime.dll
 D:\JavaMag\JavaMutatingSystem\JavaMag\bin\Debug\Antlr4.Runtime.xml
 D:\JavaMag\JavaMutatingSystem\JavaMag\obj\Debug\JavaMag.exe
 D:\JavaMag\JavaMutatingSystem\JavaMag\obj\Debug\JavaMag.pdb
+D:\JavaMag\JavaMutatingSystem\JavaMag\obj\Debug\JavaMag.csprojResolveAssemblyReference.cache
