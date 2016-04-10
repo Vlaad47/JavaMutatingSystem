@@ -52,6 +52,12 @@
   <ItemGroup>
     <Compile Include="cfg\mainCfg.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Java8BaseListener.cs" />
+    <Compile Include="Java8BaseVisitor.cs" />
+    <Compile Include="Java8Lexer.cs" />
+    <Compile Include="Java8Listener.cs" />
+    <Compile Include="Java8Parser.cs" />
+    <Compile Include="Java8Visitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1480,7 +1480,11 @@ postfixExpression
 	;
 
 postIncrementExpression
-	:	postfixExpression '++'
+	:	postfixExpression postfixIncrementOperator
+	;
+
+postfixIncrementOperator
+	: '++'
 	;
 
 postIncrementExpression_lf_postfixExpression
@@ -1488,7 +1492,11 @@ postIncrementExpression_lf_postfixExpression
 	;
 
 postDecrementExpression
-	:	postfixExpression '--'
+	:	postfixExpression postfixDecrementOperator
+	;
+
+postfixDecrementOperator
+	: '--'
 	;
 
 postDecrementExpression_lf_postfixExpression

@@ -3572,6 +3572,19 @@ public partial class Java8BaseListener : IJava8Listener {
 	public virtual void ExitPostIncrementExpression([NotNull] Java8Parser.PostIncrementExpressionContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.postfixIncrementOperator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPostfixIncrementOperator([NotNull] Java8Parser.PostfixIncrementOperatorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.postfixIncrementOperator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPostfixIncrementOperator([NotNull] Java8Parser.PostfixIncrementOperatorContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.postIncrementExpression_lf_postfixExpression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -3596,6 +3609,19 @@ public partial class Java8BaseListener : IJava8Listener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitPostDecrementExpression([NotNull] Java8Parser.PostDecrementExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.postfixDecrementOperator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPostfixDecrementOperator([NotNull] Java8Parser.PostfixDecrementOperatorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.postfixDecrementOperator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPostfixDecrementOperator([NotNull] Java8Parser.PostfixDecrementOperatorContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.postDecrementExpression_lf_postfixExpression"/>.

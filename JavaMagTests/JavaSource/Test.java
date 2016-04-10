@@ -337,5 +337,11 @@ class Test {
 		e ^= 0;
 		e |= 13;
 	}
+
+	public void postfixOperatorsTest() {
+		int a = 0;
+		i++;
+		i--;
+	}
 }
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Antlr4.Runtime;
 using JavaMag.cfg;
 
@@ -69,7 +68,7 @@ namespace JavaMag
 
         public override string VisitGreaterThanOperator(Java8Parser.GreaterThanOperatorContext context)
         {
-            if (this.TooMutate.Contains("<"))
+            if (this.TooMutate.Contains(">"))
             {
                 this._selectedTokens.Add(context);
             }
@@ -86,6 +85,309 @@ namespace JavaMag
         {
             //TODO znalezc sposob na rozroznienie pre i post increment
             return base.VisitPreIncrementOperator(context);
+        }
+
+        public override string VisitUnaryPlusOperator(Java8Parser.UnaryPlusOperatorContext context)
+        {
+            if (this.TooMutate.Contains("+"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitUnaryPlusOperator(context);
+        }
+
+        public override string VisitUnaryMinusOperator(Java8Parser.UnaryMinusOperatorContext context)
+        {
+            if (this.TooMutate.Contains("-"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitUnaryMinusOperator(context);
+        }
+
+        public override string VisitPreLogicalNegationOperator(Java8Parser.PreLogicalNegationOperatorContext context)
+        {
+            if (this.TooMutate.Contains("!"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitPreLogicalNegationOperator(context);
+        }
+
+        public override string VisitPreBitwiseNegationOperator(Java8Parser.PreBitwiseNegationOperatorContext context)
+        {
+            if (this.TooMutate.Contains("~"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitPreBitwiseNegationOperator(context);
+        }
+
+        public override string VisitMuliplyOperator(Java8Parser.MuliplyOperatorContext context)
+        {
+            if (this.TooMutate.Contains("*"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitMuliplyOperator(context);
+        }
+
+        public override string VisitDivisionOperator(Java8Parser.DivisionOperatorContext context)
+        {
+            if (this.TooMutate.Contains("/"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitDivisionOperator(context);
+        }
+
+        public override string VisitReminderOperator(Java8Parser.ReminderOperatorContext context)
+        {
+            if (this.TooMutate.Contains("%"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitReminderOperator(context);
+        }
+
+        public override string VisitAdditionOperator(Java8Parser.AdditionOperatorContext context)
+        {
+            //TODO odroznic od unarnego plusa
+            return base.VisitAdditionOperator(context);
+        }
+
+        public override string VisitSubstractionOperator(Java8Parser.SubstractionOperatorContext context)
+        {
+            //TODO odroznic od unarnego minusa
+            return base.VisitSubstractionOperator(context);
+        }
+
+        public override string VisitShiftLeftOperator(Java8Parser.ShiftLeftOperatorContext context)
+        {
+            if (this.TooMutate.Contains("<<"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitShiftLeftOperator(context);
+        }
+
+        public override string VisitShiftRightOperator(Java8Parser.ShiftRightOperatorContext context)
+        {
+            if (this.TooMutate.Contains(">>"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitShiftRightOperator(context);
+        }
+
+        public override string VisitShiftRightWithZeroOperator(Java8Parser.ShiftRightWithZeroOperatorContext context)
+        {
+            if (this.TooMutate.Contains(">>>"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitShiftRightWithZeroOperator(context);
+        }
+
+        public override string VisitGreaterOrEqualToOperator(Java8Parser.GreaterOrEqualToOperatorContext context)
+        {
+            if (this.TooMutate.Contains(">="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitGreaterOrEqualToOperator(context);
+        }
+
+        public override string VisitLesserOrEqualToOperator(Java8Parser.LesserOrEqualToOperatorContext context)
+        {
+            if (this.TooMutate.Contains("<="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitLesserOrEqualToOperator(context);
+        }
+
+        public override string VisitEqualOperator(Java8Parser.EqualOperatorContext context)
+        {
+            if (this.TooMutate.Contains("=="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitEqualOperator(context);
+        }
+
+        public override string VisitNotEqualOperator(Java8Parser.NotEqualOperatorContext context)
+        {
+            if (this.TooMutate.Contains("!="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitNotEqualOperator(context);
+        }
+
+        public override string VisitBitwiseAndOperator(Java8Parser.BitwiseAndOperatorContext context)
+        {
+            if (this.TooMutate.Contains("&"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitBitwiseAndOperator(context);
+        }
+
+        public override string VisitBitwiseExclusiveOrOperator(Java8Parser.BitwiseExclusiveOrOperatorContext context)
+        {
+            if (this.TooMutate.Contains("^"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitBitwiseExclusiveOrOperator(context);
+        }
+
+        public override string VisitBitwiseInclusiveOrOperator(Java8Parser.BitwiseInclusiveOrOperatorContext context)
+        {
+            if (this.TooMutate.Contains("|"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitBitwiseInclusiveOrOperator(context);
+        }
+
+        public override string VisitLogicalOrOperator(Java8Parser.LogicalOrOperatorContext context)
+        {
+            if (this.TooMutate.Contains("||"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitLogicalOrOperator(context);
+        }
+
+        public override string VisitLogicalAndOperator(Java8Parser.LogicalAndOperatorContext context)
+        {
+            if (this.TooMutate.Contains("&&"))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitLogicalAndOperator(context);
+        }
+
+        public override string VisitSimpleAssignmentOperator(Java8Parser.SimpleAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains("="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitSimpleAssignmentOperator(context);
+        }
+
+        public override string VisitMultipleAssignmentOperator(Java8Parser.MultipleAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains("*="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitMultipleAssignmentOperator(context);
+        }
+
+        public override string VisitDivideAssignmentOperator(Java8Parser.DivideAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains("/="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitDivideAssignmentOperator(context);
+        }
+
+        public override string VisitReminderAssignmentOperator(Java8Parser.ReminderAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains("%="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitReminderAssignmentOperator(context);
+        }
+
+        public override string VisitAddAssignmentOperator(Java8Parser.AddAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains("+="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitAddAssignmentOperator(context);
+        }
+
+        public override string VisitSubstractAssignmentOperator(Java8Parser.SubstractAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains("-="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitSubstractAssignmentOperator(context);
+        }
+
+        public override string VisitBitShiftLeftAssignmentOperator(Java8Parser.BitShiftLeftAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains("<<="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitBitShiftLeftAssignmentOperator(context);
+        }
+
+        public override string VisitBitShiftRightAssignmentOperator(Java8Parser.BitShiftRightAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains(">>="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitBitShiftRightAssignmentOperator(context);
+        }
+
+        public override string VisitBitShiftRightWithZeroAssignmentOperator(Java8Parser.BitShiftRightWithZeroAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains(">>>="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitBitShiftRightWithZeroAssignmentOperator(context);
+        }
+
+        public override string VisitBitAndAssignmentOperator(Java8Parser.BitAndAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains("&="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitBitAndAssignmentOperator(context);
+        }
+
+        public override string VisitBitXOrAssignmentOperator(Java8Parser.BitXOrAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains("^="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitBitXOrAssignmentOperator(context);
+        }
+
+        public override string VisitBitOrAssignmentOperator(Java8Parser.BitOrAssignmentOperatorContext context)
+        {
+            if (this.TooMutate.Contains("|="))
+            {
+                this._selectedTokens.Add(context);
+            }
+            return base.VisitBitOrAssignmentOperator(context);
+        }
+
+        public override string VisitPostfixIncrementOperator(Java8Parser.PostfixIncrementOperatorContext context)
+        {
+            //TODO odroznic od pre
+            return base.VisitPostfixIncrementOperator(context);
+        }
+
+        public override string VisitPostfixDecrementOperator(Java8Parser.PostfixDecrementOperatorContext context)
+        {
+            //TODO odroznic od pre
+            return base.VisitPostfixDecrementOperator(context);
         }
     }
 }

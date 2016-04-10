@@ -1937,6 +1937,13 @@ public interface IJava8Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitPostIncrementExpression([NotNull] Java8Parser.PostIncrementExpressionContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.postfixIncrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPostfixIncrementOperator([NotNull] Java8Parser.PostfixIncrementOperatorContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.postIncrementExpression_lf_postfixExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1949,6 +1956,13 @@ public interface IJava8Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitPostDecrementExpression([NotNull] Java8Parser.PostDecrementExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.postfixDecrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPostfixDecrementOperator([NotNull] Java8Parser.PostfixDecrementOperatorContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.postDecrementExpression_lf_postfixExpression"/>.

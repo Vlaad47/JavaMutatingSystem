@@ -3024,6 +3024,17 @@ public interface IJava8Listener : IParseTreeListener {
 	void ExitPostIncrementExpression([NotNull] Java8Parser.PostIncrementExpressionContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.postfixIncrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPostfixIncrementOperator([NotNull] Java8Parser.PostfixIncrementOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.postfixIncrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPostfixIncrementOperator([NotNull] Java8Parser.PostfixIncrementOperatorContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.postIncrementExpression_lf_postfixExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -3044,6 +3055,17 @@ public interface IJava8Listener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitPostDecrementExpression([NotNull] Java8Parser.PostDecrementExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.postfixDecrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPostfixDecrementOperator([NotNull] Java8Parser.PostfixDecrementOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.postfixDecrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPostfixDecrementOperator([NotNull] Java8Parser.PostfixDecrementOperatorContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.postDecrementExpression_lf_postfixExpression"/>.
