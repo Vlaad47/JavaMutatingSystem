@@ -57,7 +57,7 @@ Total lexer+parser time 1867ms.
 
  */
 class Test {
-//	public static long lexerTime = 0;
+	public static long lexerTime = 0;
 	public static boolean profile = false;
 	public static boolean notree = false;
 	public static boolean gui = false;
@@ -68,8 +68,8 @@ class Test {
 	public static boolean x2 = false;
 	public static boolean threaded = false;
 	public static boolean quiet = false;
-//	public static long parserStart;
-//	public static long parserStop;
+	public static long parserStart;
+	public static long parserStop;
 	public static Worker[] workers = new Worker[3];
 	static int windex = 0;
 
@@ -134,11 +134,11 @@ class Test {
 				}
 				doFiles(javaFiles);
 
-//				DOTGenerator gen = new DOTGenerator(null);
-//				String dot = gen.getDOT(JavaParser._decisionToDFA[112], false);
-//				System.out.println(dot);
-//				dot = gen.getDOT(JavaParser._decisionToDFA[81], false);
-//				System.out.println(dot);
+				DOTGenerator gen = new DOTGenerator(null);
+				String dot = gen.getDOT(JavaParser._decisionToDFA[112], false);
+				System.out.println(dot);
+				dot = gen.getDOT(JavaParser._decisionToDFA[81], false);
+				System.out.println(dot);
 
 				if ( x2 ) {
 					System.gc();
@@ -157,13 +157,13 @@ class Test {
 			e.printStackTrace(System.err);   // so we can get stack trace
 		}
 		long stop = System.currentTimeMillis();
-//		System.out.println("Overall time " + (stop - start) + "ms.");
+		System.out.println("Overall time " + (stop - start) + "ms.");
 		System.gc();
 	}
 
 	public static void doFiles(List<String> files) throws Exception {
 		long parserStart = System.currentTimeMillis();
-//		lexerTime = 0;
+		lexerTime = 0;
 		if ( threaded ) {
 			barrier = new CyclicBarrier(3,new Runnable() {
 				public void run() {
@@ -190,8 +190,8 @@ class Test {
 	}
 
 	private static void report() {
-//		parserStop = System.currentTimeMillis();
-//		System.out.println("Lexer total time " + lexerTime + "ms.");
+		parserStop = System.currentTimeMillis();
+		System.out.println("Lexer total time " + lexerTime + "ms.");
 		long time = 0;
 		if ( workers!=null ) {
 			// compute max as it's overlapped time
@@ -205,10 +205,10 @@ class Test {
 
 		System.out.println("finished parsing OK");
 		System.out.println(LexerATNSimulator.match_calls+" lexer match calls");
-//		System.out.println(ParserATNSimulator.predict_calls +" parser predict calls");
-//		System.out.println(ParserATNSimulator.retry_with_context +" retry_with_context after SLL conflict");
-//		System.out.println(ParserATNSimulator.retry_with_context_indicates_no_conflict +" retry sees no conflict");
-//		System.out.println(ParserATNSimulator.retry_with_context_predicts_same_alt +" retry predicts same alt as resolving conflict");
+		System.out.println(ParserATNSimulator.predict_calls +" parser predict calls");
+		System.out.println(ParserATNSimulator.retry_with_context +" retry_with_context after SLL conflict");
+		System.out.println(ParserATNSimulator.retry_with_context_indicates_no_conflict +" retry sees no conflict");
+		System.out.println(ParserATNSimulator.retry_with_context_predicts_same_alt +" retry predicts same alt as resolving conflict");
 	}
 
 	public static List<String> getFilenames(File f) throws Exception {
@@ -236,23 +236,23 @@ class Test {
 
 	// This method decides what action to take based on the type of
 	//   file we are looking at
-//	public static void doFile_(File f) throws Exception {
-//		// If this is a directory, walk each file/dir in that directory
-//		if (f.isDirectory()) {
-//			String files[] = f.list();
-//			for(int i=0; i < files.length; i++) {
-//				doFile_(new File(f, files[i]));
-//			}
-//		}
-//
-//		// otherwise, if this is a java file, parse it!
-//		else if ( ((f.getName().length()>5) &&
-//			f.getName().substring(f.getName().length()-5).equals(".java")) )
-//		{
-//			System.err.println(f.getAbsolutePath());
-//			parseFile(f.getAbsolutePath());
-//		}
-//	}
+	public static void doFile_(File f) throws Exception {
+		// If this is a directory, walk each file/dir in that directory
+		if (f.isDirectory()) {
+			String files[] = f.list();
+			for(int i=0; i < files.length; i++) {
+				doFile_(new File(f, files[i]));
+			}
+		}
+
+		// otherwise, if this is a java file, parse it!
+		else if ( ((f.getName().length()>5) &&
+			f.getName().substring(f.getName().length()-5).equals(".java")) )
+		{
+			System.err.println(f.getAbsolutePath());
+			parseFile(f.getAbsolutePath());
+		}
+	}
 
 	public static void parseFile(String f) {
 		try {
@@ -261,10 +261,10 @@ class Test {
 			Lexer lexer = new JavaLexer(new ANTLRFileStream(f));
 
 			CommonTokenStream tokens = new CommonTokenStream(lexer);
-//			long start = System.currentTimeMillis();
-//			tokens.fill(); // load all and check time
-//			long stop = System.currentTimeMillis();
-//			lexerTime += stop-start;
+			long start = System.currentTimeMillis();
+			tokens.fill(); // load all and check time
+			long stop = System.currentTimeMillis();
+			lexerTime += stop-start;
 
 			// Create a parser that reads from the scanner
 			JavaParser parser = new JavaParser(tokens);
@@ -282,6 +282,60 @@ class Test {
 			System.err.println("parser exception: "+e);
 			e.printStackTrace();   // so we can get stack trace
 		}
+	}
+
+	public void equalityOperatorsTest() {
+		if (1 != 2) 
+		if (2 == 1);
+	}
+
+	public void unaryOperatorsTest() {
+		int a = 1;
+		a++;
+		a--;
+		++a;
+		--a;
+		int b = +a;
+		int c = -a;
+	}
+
+	public void comapreOperatorsTest() {
+		if (1 > 2)
+		if (1 < 2)
+		if (1 >= 2)	
+		if (1 <= 2);
+	}
+
+	public void arithmeticOperatorsTest() {
+		int d = 1+2;
+		d = 2-3;
+		d = 3*4;
+		d = 5/6;
+		d = 6%7;
+	}
+
+	public void logicalOperatorsTest() {
+		if ((1<2) & (1<2))
+        if ((1<2) ^ (1<2))
+        if ((1<2) | (1<2))
+        if ((1<2) && (1<2))
+        if ((1<2) || (1<2));
+	}
+
+	public void assignementOperatorsTest() {
+		int e = 1;
+		e = 1;
+		e *= 2;
+		e /= 2;
+		e %= 2;
+		e += 10;
+		e -= 5;
+		e <<= 1;
+		e >>= 1;
+		e >>>= 1;
+		e &= 1;
+		e ^= 0;
+		e |= 13;
 	}
 }
 

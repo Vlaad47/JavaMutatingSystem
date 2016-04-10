@@ -9,24 +9,19 @@ namespace JavaMag
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             StreamReader inputStream = new StreamReader(MainCfg.JavaFilesDir);
             Java8Parser parser = new Java8Parser(new CommonTokenStream(new Java8Lexer(new AntlrInputStream(inputStream.ReadToEnd()))));
             ParserRuleContext tree = parser.compilationUnit();
             Console.WriteLine(tree.GetText());
             MutatorOperator mutationOperator = new MutatorOperator(tree);
-            List<string> tokensToMutate = new List<string>();
-            tokensToMutate.Add("<");
-            tokensToMutate.Add(">");
+            List<string> tokensToMutate = new List<string> {"<", ">"};
             mutationOperator.TooMutate = tokensToMutate;
-            List<string> expecetedNewTokens = new List<string>();
-            expecetedNewTokens.Add("<=");
-            expecetedNewTokens.Add(">=");
+            List<string> expecetedNewTokens = new List<string> {"<=", ">="};
             mutationOperator.Mutators = expecetedNewTokens;
             mutationOperator.Mutate();
             Console.WriteLine(tree.GetText());
-            Console.Read();
             Console.Read();
         }
     }
@@ -79,6 +74,18 @@ namespace JavaMag
                 this._selectedTokens.Add(context);
             }
             return base.VisitGreaterThanOperator(context);
+        }
+
+        public override string VisitPreDecrementOperator(Java8Parser.PreDecrementOperatorContext context)
+        {
+            //TODO znalezc sposob na rozroznienie pre i post decrement
+            return base.VisitPreDecrementOperator(context);
+        }
+
+        public override string VisitPreIncrementOperator(Java8Parser.PreIncrementOperatorContext context)
+        {
+            //TODO znalezc sposob na rozroznienie pre i post increment
+            return base.VisitPreIncrementOperator(context);
         }
     }
 }

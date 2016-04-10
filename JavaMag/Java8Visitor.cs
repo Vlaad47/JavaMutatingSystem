@@ -1545,6 +1545,90 @@ public interface IJava8Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitAssignmentOperator([NotNull] Java8Parser.AssignmentOperatorContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.simpleAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSimpleAssignmentOperator([NotNull] Java8Parser.SimpleAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.multipleAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitMultipleAssignmentOperator([NotNull] Java8Parser.MultipleAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.divideAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDivideAssignmentOperator([NotNull] Java8Parser.DivideAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.reminderAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitReminderAssignmentOperator([NotNull] Java8Parser.ReminderAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.addAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAddAssignmentOperator([NotNull] Java8Parser.AddAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.substractAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSubstractAssignmentOperator([NotNull] Java8Parser.SubstractAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.bitShiftLeftAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBitShiftLeftAssignmentOperator([NotNull] Java8Parser.BitShiftLeftAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.bitShiftRightAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBitShiftRightAssignmentOperator([NotNull] Java8Parser.BitShiftRightAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.bitShiftRightWithZeroAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBitShiftRightWithZeroAssignmentOperator([NotNull] Java8Parser.BitShiftRightWithZeroAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.bitAndAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBitAndAssignmentOperator([NotNull] Java8Parser.BitAndAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.bitXOrAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBitXOrAssignmentOperator([NotNull] Java8Parser.BitXOrAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.bitOrAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBitOrAssignmentOperator([NotNull] Java8Parser.BitOrAssignmentOperatorContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.conditionalExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1587,6 +1671,48 @@ public interface IJava8Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitAndExpression([NotNull] Java8Parser.AndExpressionContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.andOrOperators"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAndOrOperators([NotNull] Java8Parser.AndOrOperatorsContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.logicalOrOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLogicalOrOperator([NotNull] Java8Parser.LogicalOrOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.logicalAndOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLogicalAndOperator([NotNull] Java8Parser.LogicalAndOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.bitwiseInclusiveOrOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBitwiseInclusiveOrOperator([NotNull] Java8Parser.BitwiseInclusiveOrOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.bitwiseExclusiveOrOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBitwiseExclusiveOrOperator([NotNull] Java8Parser.BitwiseExclusiveOrOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.bitwiseAndOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBitwiseAndOperator([NotNull] Java8Parser.BitwiseAndOperatorContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.equalityExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1599,6 +1725,20 @@ public interface IJava8Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitRelationalExpression([NotNull] Java8Parser.RelationalExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.equalOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitEqualOperator([NotNull] Java8Parser.EqualOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.notEqualOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitNotEqualOperator([NotNull] Java8Parser.NotEqualOperatorContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.lesserThanOperator"/>.
@@ -1615,6 +1755,20 @@ public interface IJava8Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitGreaterThanOperator([NotNull] Java8Parser.GreaterThanOperatorContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.lesserOrEqualToOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLesserOrEqualToOperator([NotNull] Java8Parser.LesserOrEqualToOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.greaterOrEqualToOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitGreaterOrEqualToOperator([NotNull] Java8Parser.GreaterOrEqualToOperatorContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.compareOperator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -1627,6 +1781,27 @@ public interface IJava8Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitShiftExpression([NotNull] Java8Parser.ShiftExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.shiftLeftOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitShiftLeftOperator([NotNull] Java8Parser.ShiftLeftOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.shiftRightOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitShiftRightOperator([NotNull] Java8Parser.ShiftRightOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.shiftRightWithZeroOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitShiftRightWithZeroOperator([NotNull] Java8Parser.ShiftRightWithZeroOperatorContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.additiveExpression"/>.
@@ -1643,11 +1818,74 @@ public interface IJava8Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitMultiplicativeExpression([NotNull] Java8Parser.MultiplicativeExpressionContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.additionOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAdditionOperator([NotNull] Java8Parser.AdditionOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.substractionOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSubstractionOperator([NotNull] Java8Parser.SubstractionOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.muliplyOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitMuliplyOperator([NotNull] Java8Parser.MuliplyOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.divisionOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDivisionOperator([NotNull] Java8Parser.DivisionOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.reminderOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitReminderOperator([NotNull] Java8Parser.ReminderOperatorContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.unaryExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitUnaryExpression([NotNull] Java8Parser.UnaryExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.unaryPlusOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUnaryPlusOperator([NotNull] Java8Parser.UnaryPlusOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.unaryMinusOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUnaryMinusOperator([NotNull] Java8Parser.UnaryMinusOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.preIncrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPreIncrementOperator([NotNull] Java8Parser.PreIncrementOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.preDecrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPreDecrementOperator([NotNull] Java8Parser.PreDecrementOperatorContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.preIncrementExpression"/>.
@@ -1662,6 +1900,20 @@ public interface IJava8Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitPreDecrementExpression([NotNull] Java8Parser.PreDecrementExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.preBitwiseNegationOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPreBitwiseNegationOperator([NotNull] Java8Parser.PreBitwiseNegationOperatorContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Java8Parser.preLogicalNegationOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPreLogicalNegationOperator([NotNull] Java8Parser.PreLogicalNegationOperatorContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="Java8Parser.unaryExpressionNotPlusMinus"/>.

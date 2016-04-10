@@ -2408,6 +2408,138 @@ public interface IJava8Listener : IParseTreeListener {
 	void ExitAssignmentOperator([NotNull] Java8Parser.AssignmentOperatorContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.simpleAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSimpleAssignmentOperator([NotNull] Java8Parser.SimpleAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.simpleAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSimpleAssignmentOperator([NotNull] Java8Parser.SimpleAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.multipleAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterMultipleAssignmentOperator([NotNull] Java8Parser.MultipleAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.multipleAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitMultipleAssignmentOperator([NotNull] Java8Parser.MultipleAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.divideAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDivideAssignmentOperator([NotNull] Java8Parser.DivideAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.divideAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDivideAssignmentOperator([NotNull] Java8Parser.DivideAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.reminderAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterReminderAssignmentOperator([NotNull] Java8Parser.ReminderAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.reminderAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitReminderAssignmentOperator([NotNull] Java8Parser.ReminderAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.addAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAddAssignmentOperator([NotNull] Java8Parser.AddAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.addAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAddAssignmentOperator([NotNull] Java8Parser.AddAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.substractAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSubstractAssignmentOperator([NotNull] Java8Parser.SubstractAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.substractAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSubstractAssignmentOperator([NotNull] Java8Parser.SubstractAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.bitShiftLeftAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBitShiftLeftAssignmentOperator([NotNull] Java8Parser.BitShiftLeftAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.bitShiftLeftAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBitShiftLeftAssignmentOperator([NotNull] Java8Parser.BitShiftLeftAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.bitShiftRightAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBitShiftRightAssignmentOperator([NotNull] Java8Parser.BitShiftRightAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.bitShiftRightAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBitShiftRightAssignmentOperator([NotNull] Java8Parser.BitShiftRightAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.bitShiftRightWithZeroAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBitShiftRightWithZeroAssignmentOperator([NotNull] Java8Parser.BitShiftRightWithZeroAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.bitShiftRightWithZeroAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBitShiftRightWithZeroAssignmentOperator([NotNull] Java8Parser.BitShiftRightWithZeroAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.bitAndAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBitAndAssignmentOperator([NotNull] Java8Parser.BitAndAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.bitAndAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBitAndAssignmentOperator([NotNull] Java8Parser.BitAndAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.bitXOrAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBitXOrAssignmentOperator([NotNull] Java8Parser.BitXOrAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.bitXOrAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBitXOrAssignmentOperator([NotNull] Java8Parser.BitXOrAssignmentOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.bitOrAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBitOrAssignmentOperator([NotNull] Java8Parser.BitOrAssignmentOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.bitOrAssignmentOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBitOrAssignmentOperator([NotNull] Java8Parser.BitOrAssignmentOperatorContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.conditionalExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -2474,6 +2606,72 @@ public interface IJava8Listener : IParseTreeListener {
 	void ExitAndExpression([NotNull] Java8Parser.AndExpressionContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.andOrOperators"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAndOrOperators([NotNull] Java8Parser.AndOrOperatorsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.andOrOperators"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAndOrOperators([NotNull] Java8Parser.AndOrOperatorsContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.logicalOrOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLogicalOrOperator([NotNull] Java8Parser.LogicalOrOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.logicalOrOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLogicalOrOperator([NotNull] Java8Parser.LogicalOrOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.logicalAndOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLogicalAndOperator([NotNull] Java8Parser.LogicalAndOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.logicalAndOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLogicalAndOperator([NotNull] Java8Parser.LogicalAndOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.bitwiseInclusiveOrOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBitwiseInclusiveOrOperator([NotNull] Java8Parser.BitwiseInclusiveOrOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.bitwiseInclusiveOrOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBitwiseInclusiveOrOperator([NotNull] Java8Parser.BitwiseInclusiveOrOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.bitwiseExclusiveOrOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBitwiseExclusiveOrOperator([NotNull] Java8Parser.BitwiseExclusiveOrOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.bitwiseExclusiveOrOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBitwiseExclusiveOrOperator([NotNull] Java8Parser.BitwiseExclusiveOrOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.bitwiseAndOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBitwiseAndOperator([NotNull] Java8Parser.BitwiseAndOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.bitwiseAndOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBitwiseAndOperator([NotNull] Java8Parser.BitwiseAndOperatorContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.equalityExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -2494,6 +2692,28 @@ public interface IJava8Listener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitRelationalExpression([NotNull] Java8Parser.RelationalExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.equalOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterEqualOperator([NotNull] Java8Parser.EqualOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.equalOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitEqualOperator([NotNull] Java8Parser.EqualOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.notEqualOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterNotEqualOperator([NotNull] Java8Parser.NotEqualOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.notEqualOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitNotEqualOperator([NotNull] Java8Parser.NotEqualOperatorContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.lesserThanOperator"/>.
@@ -2518,6 +2738,28 @@ public interface IJava8Listener : IParseTreeListener {
 	void ExitGreaterThanOperator([NotNull] Java8Parser.GreaterThanOperatorContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.lesserOrEqualToOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLesserOrEqualToOperator([NotNull] Java8Parser.LesserOrEqualToOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.lesserOrEqualToOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLesserOrEqualToOperator([NotNull] Java8Parser.LesserOrEqualToOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.greaterOrEqualToOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterGreaterOrEqualToOperator([NotNull] Java8Parser.GreaterOrEqualToOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.greaterOrEqualToOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitGreaterOrEqualToOperator([NotNull] Java8Parser.GreaterOrEqualToOperatorContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.compareOperator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -2538,6 +2780,39 @@ public interface IJava8Listener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitShiftExpression([NotNull] Java8Parser.ShiftExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.shiftLeftOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterShiftLeftOperator([NotNull] Java8Parser.ShiftLeftOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.shiftLeftOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitShiftLeftOperator([NotNull] Java8Parser.ShiftLeftOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.shiftRightOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterShiftRightOperator([NotNull] Java8Parser.ShiftRightOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.shiftRightOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitShiftRightOperator([NotNull] Java8Parser.ShiftRightOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.shiftRightWithZeroOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterShiftRightWithZeroOperator([NotNull] Java8Parser.ShiftRightWithZeroOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.shiftRightWithZeroOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitShiftRightWithZeroOperator([NotNull] Java8Parser.ShiftRightWithZeroOperatorContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.additiveExpression"/>.
@@ -2562,6 +2837,61 @@ public interface IJava8Listener : IParseTreeListener {
 	void ExitMultiplicativeExpression([NotNull] Java8Parser.MultiplicativeExpressionContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.additionOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAdditionOperator([NotNull] Java8Parser.AdditionOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.additionOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAdditionOperator([NotNull] Java8Parser.AdditionOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.substractionOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSubstractionOperator([NotNull] Java8Parser.SubstractionOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.substractionOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSubstractionOperator([NotNull] Java8Parser.SubstractionOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.muliplyOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterMuliplyOperator([NotNull] Java8Parser.MuliplyOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.muliplyOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitMuliplyOperator([NotNull] Java8Parser.MuliplyOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.divisionOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDivisionOperator([NotNull] Java8Parser.DivisionOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.divisionOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDivisionOperator([NotNull] Java8Parser.DivisionOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.reminderOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterReminderOperator([NotNull] Java8Parser.ReminderOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.reminderOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitReminderOperator([NotNull] Java8Parser.ReminderOperatorContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.unaryExpression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -2571,6 +2901,50 @@ public interface IJava8Listener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitUnaryExpression([NotNull] Java8Parser.UnaryExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.unaryPlusOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterUnaryPlusOperator([NotNull] Java8Parser.UnaryPlusOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.unaryPlusOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitUnaryPlusOperator([NotNull] Java8Parser.UnaryPlusOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.unaryMinusOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterUnaryMinusOperator([NotNull] Java8Parser.UnaryMinusOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.unaryMinusOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitUnaryMinusOperator([NotNull] Java8Parser.UnaryMinusOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.preIncrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPreIncrementOperator([NotNull] Java8Parser.PreIncrementOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.preIncrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPreIncrementOperator([NotNull] Java8Parser.PreIncrementOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.preDecrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPreDecrementOperator([NotNull] Java8Parser.PreDecrementOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.preDecrementOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPreDecrementOperator([NotNull] Java8Parser.PreDecrementOperatorContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.preIncrementExpression"/>.
@@ -2593,6 +2967,28 @@ public interface IJava8Listener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitPreDecrementExpression([NotNull] Java8Parser.PreDecrementExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.preBitwiseNegationOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPreBitwiseNegationOperator([NotNull] Java8Parser.PreBitwiseNegationOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.preBitwiseNegationOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPreBitwiseNegationOperator([NotNull] Java8Parser.PreBitwiseNegationOperatorContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Java8Parser.preLogicalNegationOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPreLogicalNegationOperator([NotNull] Java8Parser.PreLogicalNegationOperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Java8Parser.preLogicalNegationOperator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPreLogicalNegationOperator([NotNull] Java8Parser.PreLogicalNegationOperatorContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="Java8Parser.unaryExpressionNotPlusMinus"/>.

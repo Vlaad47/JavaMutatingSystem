@@ -1208,18 +1208,66 @@ leftHandSide
 	;
 
 assignmentOperator
-	:	'='
-	|	'*='
-	|	'/='
-	|	'%='
-	|	'+='
-	|	'-='
-	|	'<<='
-	|	'>>='
-	|	'>>>='
-	|	'&='
-	|	'^='
-	|	'|='
+	:	simpleAssignmentOperator
+	|	multipleAssignmentOperator
+	|	divideAssignmentOperator
+	|	reminderAssignmentOperator
+	|	addAssignmentOperator
+	|	substractAssignmentOperator
+	|	bitShiftLeftAssignmentOperator
+	|	bitShiftRightAssignmentOperator
+	|	bitShiftRightWithZeroAssignmentOperator
+	|	bitAndAssignmentOperator
+	|	bitXOrAssignmentOperator
+	|	bitOrAssignmentOperator
+	;
+
+simpleAssignmentOperator
+	: '='
+	;
+
+multipleAssignmentOperator
+	: '*='
+	;
+
+divideAssignmentOperator
+	: '/='
+	;
+
+reminderAssignmentOperator
+	: '%='
+	;
+
+addAssignmentOperator
+	: '+='
+	;
+
+substractAssignmentOperator
+	: '-='
+	;
+
+bitShiftLeftAssignmentOperator
+	: '<<='
+	;
+
+bitShiftRightAssignmentOperator
+	: '>>='
+	;
+
+bitShiftRightWithZeroAssignmentOperator
+	: '>>>='
+	;
+
+bitAndAssignmentOperator
+	: '&='
+	;
+
+bitXOrAssignmentOperator
+	: '^='
+	;
+
+bitOrAssignmentOperator
+	: '|='
 	;
 
 conditionalExpression
@@ -1229,33 +1277,61 @@ conditionalExpression
 
 conditionalOrExpression
 	:	conditionalAndExpression
-	|	conditionalOrExpression '||' conditionalAndExpression
+	|	conditionalOrExpression andOrOperators conditionalAndExpression
 	;
 
 conditionalAndExpression
 	:	inclusiveOrExpression
-	|	conditionalAndExpression '&&' inclusiveOrExpression
+	|	conditionalAndExpression andOrOperators inclusiveOrExpression
 	;
 
 inclusiveOrExpression
 	:	exclusiveOrExpression
-	|	inclusiveOrExpression '|' exclusiveOrExpression
+	|	inclusiveOrExpression andOrOperators exclusiveOrExpression
 	;
 
 exclusiveOrExpression
 	:	andExpression
-	|	exclusiveOrExpression '^' andExpression
+	|	exclusiveOrExpression 'andOrOperators' andExpression
 	;
 
 andExpression
 	:	equalityExpression
-	|	andExpression '&' equalityExpression
+	|	andExpression andOrOperators equalityExpression
+	;
+
+andOrOperators
+	: logicalOrOperator
+	| logicalAndOperator
+	| bitwiseInclusiveOrOperator
+	| bitwiseExclusiveOrOperator
+	| bitwiseAndOperator
+	;
+
+logicalOrOperator
+	: '||'
+	;
+
+logicalAndOperator
+	: '&&'
+	;
+
+bitwiseInclusiveOrOperator
+	: '|'
+	;
+
+bitwiseExclusiveOrOperator
+	: '^'
+	;
+
+bitwiseAndOperator
+	: '&'
 	;
 
 equalityExpression
 	:	relationalExpression
-	|	equalityExpression '==' relationalExpression
-	|	equalityExpression '!=' relationalExpression
+	|	equalityExpression equalOperator relationalExpression
+	|	equalityExpression notEqualOperator relationalExpression
 	;
 
 relationalExpression
@@ -1264,57 +1340,133 @@ relationalExpression
 	|	relationalExpression 'instanceof' referenceType
 	;
 
-lesserThanOperator : '<';
+equalOperator
+	: '=='
+	;
 
-greaterThanOperator : '>';
+notEqualOperator
+	: '!='
+	;
+
+lesserThanOperator 
+	:	'<'
+	;
+
+greaterThanOperator
+	:	'>'
+	;
+	
+lesserOrEqualToOperator 
+	:	'<='
+	;
+
+greaterOrEqualToOperator
+	:	'>='
+	;
 
 compareOperator
 	:   lesserThanOperator
 	|	greaterThanOperator
-	|	'<='
-	|	'>='
+	|	lesserOrEqualToOperator
+	|	greaterOrEqualToOperator
 	;
 
 shiftExpression
 	:	additiveExpression
-	|	shiftExpression '<' '<' additiveExpression
-	|	shiftExpression '>' '>' additiveExpression
-	|	shiftExpression '>' '>' '>' additiveExpression
+	|	shiftExpression shiftLeftOperator additiveExpression
+	|	shiftExpression shiftRightOperator additiveExpression
+	|	shiftExpression shiftRightWithZeroOperator additiveExpression
+	;
+
+shiftLeftOperator
+	: '<' '<'
+	;
+
+shiftRightOperator
+	: '>' '>'
+	;
+
+shiftRightWithZeroOperator
+	: '>' '>' '>'
 	;
 
 additiveExpression
 	:	multiplicativeExpression
-	|	additiveExpression '+' multiplicativeExpression
-	|	additiveExpression '-' multiplicativeExpression
+	|	additiveExpression additionOperator multiplicativeExpression
+	|	additiveExpression substractionOperator multiplicativeExpression
 	;
 
 multiplicativeExpression
 	:	unaryExpression
-	|	multiplicativeExpression '*' unaryExpression
-	|	multiplicativeExpression '/' unaryExpression
-	|	multiplicativeExpression '%' unaryExpression
+	|	multiplicativeExpression muliplyOperator unaryExpression
+	|	multiplicativeExpression divisionOperator unaryExpression
+	|	multiplicativeExpression reminderOperator unaryExpression
+	;
+
+additionOperator
+	: '+'
+	;
+
+substractionOperator
+	: '-'
+	;
+
+muliplyOperator
+	: '*'
+	;
+
+divisionOperator
+	: '/'
+	;
+
+reminderOperator
+	: '%'
 	;
 
 unaryExpression
-	:	preIncrementExpression
-	|	preDecrementExpression
-	|	'+' unaryExpression
-	|	'-' unaryExpression
+	:	preIncrementOperator unaryExpression
+	|	preDecrementOperator unaryExpression
+	|	unaryPlusOperator unaryExpression
+	|	unaryMinusOperator unaryExpression
 	|	unaryExpressionNotPlusMinus
 	;
 
+unaryPlusOperator
+	: '+'
+	;
+
+unaryMinusOperator
+	: '-'
+	;
+
+preIncrementOperator
+	: '++'
+	;
+
+preDecrementOperator
+	: '--'
+	;
+
 preIncrementExpression
-	:	'++' unaryExpression
+	:	preIncrementOperator unaryExpression
 	;
 
 preDecrementExpression
-	:	'--' unaryExpression
+	:	preDecrementOperator unaryExpression
+	;
+
+preBitwiseNegationOperator
+	: '~'
+	;
+
+preLogicalNegationOperator
+	: '!'
 	;
 
 unaryExpressionNotPlusMinus
 	:	postfixExpression
-	|	'~' unaryExpression
-	|	'!' unaryExpression
+	|	preBitwiseNegationOperator unaryExpression
+	|	preLogicalNegationOperator unaryExpression
 	|	castExpression
 	;
 
