@@ -3,3 +3,11 @@
 ################################################################################
 
 /JavaMagTests/obj/Debug
+/JavaMagTests/bin/Debug/Antlr4.Runtime.dll
+/JavaMagTests/bin/Debug/Antlr4.Runtime.xml
+/JavaMagTests/bin/Debug/JavaMag.exe
+/JavaMagTests/bin/Debug/JavaMagTests.dll
+/JavaMagTests/bin/Debug/JavaMagTests.pdb
+/JavaMag/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/JavaMag/obj/Debug/Java8.tokens
+/JavaMag/obj/Debug/Java8Lexer.tokens

@@ -7,7 +7,8 @@ class j01{
 		if(1>2);
 	}
 	void dupa1(){
-		int i=0;
+		int i;
+		i = 0;
 		while(1<2);
 		i++;
 	}

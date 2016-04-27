@@ -58,8 +58,10 @@
     <Compile Include="Java8Listener.cs" />
     <Compile Include="Java8Parser.cs" />
     <Compile Include="Java8Visitor.cs" />
+    <Compile Include="MutatorOperator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SwitchBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -68,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="JavaSource\j01.java" />
-    <Content Include="JavaSource\Test.java" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="generated\" />
